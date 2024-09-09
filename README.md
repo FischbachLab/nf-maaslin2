@@ -6,7 +6,7 @@ This pipeline is based on the original [MaAsLin2](https://github.com/biobakery/M
 
 <!--And a heatmap produced by [Hclust2](https://github.com/SegataLab/hclust2) on the MetaPhlAn2 abundance profiles.-->
 
-## Sample batch command
+## Example command
 ====================
 
 ### This is a MaAsLin2 pipeline for the Nextflow framework.
