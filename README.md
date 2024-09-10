@@ -6,7 +6,7 @@ This pipeline is based on the original [MaAsLin2](https://github.com/biobakery/M
 
 <!--And a heatmap produced by [Hclust2](https://github.com/SegataLab/hclust2) on the MetaPhlAn2 abundance profiles.-->
 
-## Example command
+## Examples
 ====================
 
 ### This is a MaAsLin2 pipeline for the Nextflow framework.
@@ -43,13 +43,7 @@ AD8_10_1D	6.65516	2.222596551686741	5.228421618666584	0.0	0.5258301300665145	3.9
 AD8_10_2D	14.100220000000002	9.299011762878296	3.6592790089581535	0.0	0.272534226109324	2.563172069940028	0.3113952857405082	0.011759679627562157	0.0
 ```
 
-#### 4. Run on a local machine
-```{bash}
-nextflow run main.nf --project TEST --group_name Tac_pre --input_path "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv" --metadata "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv" --profiles local
-```
-
-<!--
-#### 4. An example batch job
+#### 4. An example batch job (default mode)
 ```{bash}
 aws batch submit-job \
   --job-name nf-maaslin2 \
@@ -63,11 +57,16 @@ aws batch submit-job \
 "--metadata", "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv", \
 "--output_path", "s3://genomics-workflow-core/Results/maaslin2" "
 ```
--->
 
-#### 5. The final output files:
+#### 5. Run on a local machine after commenting out the batch mode options and enabling the local mode
 ```{bash}
-s3://genomics-workflow-core/Results/maaslin2/TEST/Maaslin2/Maaslin2_outputs/
+nextflow run main.nf --project TEST --group_name Tac_pre --input_path "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv" --metadata "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv" --profiles local
+```
+
+
+#### 6. The final output files:
+```{bash}
+s3://genomics-workflow-core/Results/maaslin2/TEST/Maaslin2_outputs/
 ```
 
 

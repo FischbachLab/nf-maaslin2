@@ -8,7 +8,7 @@ process Maaslin2 {
     cpus 2
     memory 8.GB
     
-    publishDir "${params.output_path}/${params.project}/Maaslin2", mode:'copy'
+    publishDir "${params.output_path}/${params.project}", mode:'copy'
 
     input:
      path(mp)
