@@ -43,7 +43,7 @@ AD8_10_1D	6.65516	2.222596551686741	5.228421618666584	0.0	0.5258301300665145	3.9
 AD8_10_2D	14.100220000000002	9.299011762878296	3.6592790089581535	0.0	0.272534226109324	2.563172069940028	0.3113952857405082	0.011759679627562157	0.0
 ```
 
-#### 4. An example batch job (default mode)
+#### 4. An example batch job
 ```{bash}
 aws batch submit-job \
   --job-name nf-maaslin2 \
@@ -58,7 +58,7 @@ aws batch submit-job \
 "--output_path", "s3://genomics-workflow-core/Results/maaslin2" "
 ```
 
-#### 5. Run on a local machine after commenting out the batch mode options and enabling the local mode
+#### 5. Command line to run on a local machine
 ```{bash}
 nextflow run main.nf --project TEST --group_name Tac_pre --input_path "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv" --metadata "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv" --profiles local
 ```
