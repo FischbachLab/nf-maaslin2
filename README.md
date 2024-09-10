@@ -50,8 +50,8 @@ aws batch submit-job \
   --job-queue priority-maf-pipelines \
   --job-definition nextflow-production \
   --container-overrides command="FischbachLab/nf-maaslin2 \
-"--project", "TEST", \
 "--profiles", "awsbatch", \
+"--project", "TEST", \
 "--group_name", "Tac_pre", \
 "--input_path", "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv", \
 "--metadata", "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv", \
@@ -60,7 +60,13 @@ aws batch submit-job \
 
 #### 5. Command line to run on a local machine
 ```{bash}
-nextflow run main.nf --project TEST --group_name Tac_pre --input_path "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv" --metadata "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv" --profiles local
+nextflow run main.nf \
+--profiles local \
+--project TEST \
+--group_name Tac_pre \
+--input_path "s3://nextflow-pipelines/nf-maaslin2/data/metaphlan_abundance_profiles.tsv" \
+--metadata "s3://nextflow-pipelines/nf-maaslin2/data/metadata.tsv" \
+--output_path "s3://genomics-workflow-core/Results/maaslin2" 
 ```
 
 
